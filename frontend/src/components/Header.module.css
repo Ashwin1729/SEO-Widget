@@ -1,0 +1,18 @@
+.header_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
+
+.title {
+  font-size: 50px;
+  font-weight: 600;
+  color: rgb(57, 138, 252);
+  padding: 20px;
+}

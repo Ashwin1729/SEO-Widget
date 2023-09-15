@@ -12,9 +12,9 @@ const InputField = () => {
         label="Website URL"
         variant="standard"
       />
-      <Button className={styles.send_button} variant="contained">
-        Get SEO Audit
-      </Button>
+      <div className={styles.send_button}>
+        <Button variant="contained">Get SEO Audit</Button>
+      </div>
     </div>
   );
 };

@@ -6,8 +6,10 @@
 }
 
 .screenshot {
+  /* display: flex;
+  justify-content: flex-end; */
   object-fit: contain;
-  width: 50%;
+  flex: 60%;
   margin: 20px;
 }
 
@@ -22,7 +24,7 @@
   /* flex-direction: column; */
   justify-content: center;
   align-items: center;
-  width: 50%;
+  flex: 40%;
   margin: 20px;
 }
 

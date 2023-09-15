@@ -3,7 +3,7 @@ import LandingPage from "./components/LandingPage";
 import AuditReport from "./components/AuditReport/AuditReport";
 
 function App() {
-  return <AuditReport />;
+  return <LandingPage />;
 }
 
 export default App;

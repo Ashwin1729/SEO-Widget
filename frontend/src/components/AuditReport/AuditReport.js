@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./AuditReport.module.css";
 import AuditScores from "./AuditScores";
 import OnpageResults from "./OnpageResults";
+import PageFunctions from "./PageFunctions";
 
 const AuditReport = () => {
   // useEffect(() => {
@@ -25,6 +26,7 @@ const AuditReport = () => {
       </div>
       <AuditScores />
       <OnpageResults />
+      <PageFunctions />
     </div>
   );
 };

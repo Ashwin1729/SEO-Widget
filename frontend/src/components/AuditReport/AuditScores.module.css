@@ -1,0 +1,35 @@
+.score_container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin: 30px 0;
+}
+
+.screenshot {
+  object-fit: contain;
+  width: 50%;
+  margin: 20px;
+}
+
+.screenshot > img {
+  object-fit: contain;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.page_score {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: 20px;
+}
+
+.progress {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}

@@ -1,14 +1,9 @@
 import React from "react";
-import Header from "./components/Header.js";
-import InputField from "./components/InputField.js";
+import LandingPage from "./components/LandingPage";
+import AuditReport from "./components/AuditReport/AuditReport";
 
 function App() {
-  return (
-    <div>
-      <Header />
-      <InputField />
-    </div>
-  );
+  return <AuditReport />;
 }
 
 export default App;

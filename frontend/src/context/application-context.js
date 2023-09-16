@@ -3,6 +3,8 @@ import React, { useState, createContext } from "react";
 export const AppContext = createContext({
   url: "",
   setUrl: () => {},
+  screenshotUrl: "",
+  setScreenshotUrl: () => {},
   loading: null,
   setLoading: () => {},
 });
@@ -10,16 +12,19 @@ export const AppContext = createContext({
 const AppContextProvider = (props) => {
   const [url, setUrl] = useState("");
   const [loading, setLoading] = useState(false);
+  const [screenshotUrl, setScreenshotUrl] = useState("");
 
   const store = {
     url,
     setUrl,
+    screenshotUrl,
+    setScreenshotUrl,
     loading,
     setLoading,
   };
 
   return (
-    <AppContextProvider value={store}>{props.children}</AppContextProvider>
+    <AppContext.Provider value={store}>{props.children}</AppContext.Provider>
   );
 };
 

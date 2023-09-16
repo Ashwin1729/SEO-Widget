@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import screenshot from "../../assets/screenshot.png";
 import CircularProgress from "../utils/CircularProgressBar";
 import { Typography } from "@mui/material";
 import styles from "./AuditScores.module.css";
+import { AppContext } from "../../context/application-context";
 
 const AuditScores = () => {
+  const appCtx = useContext(AppContext);
+  const screenshotUrl = appCtx.screenshotUrl;
+
   return (
     <div className={styles.score_container}>
       <div className={styles.screenshot}>
-        <img src={screenshot} alt="website_screenshot" />
+        <img src={screenshotUrl} alt="website_screenshot" />
       </div>
       <div className={styles.page_score}>
         <div className={styles.progress}>

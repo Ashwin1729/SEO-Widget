@@ -1,0 +1,16 @@
+.card_container {
+  flex: 45%;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+  margin: 0.5rem;
+  text-align: left;
+}
+
+.heading {
+  font-weight: 500;
+  margin: 0.5rem 0;
+  margin-bottom: 2rem;
+}

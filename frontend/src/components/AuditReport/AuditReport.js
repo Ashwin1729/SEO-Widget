@@ -3,19 +3,11 @@ import styles from "./AuditReport.module.css";
 import AuditScores from "./AuditScores";
 import OnpageResults from "./OnpageResults";
 import PageFunctions from "./PageFunctions";
+import OnpageContent from "./OnpageContent";
+import HeaderTag from "./HeaderTag";
+import SpeedInsights from "./SpeedInsights";
 
 const AuditReport = () => {
-  // useEffect(() => {
-  //   const timer = setInterval(() => {
-  //     setPageScore((prevProgress) =>
-  //       prevProgress >= 100 ? 0 : prevProgress + 10
-  //     );
-  //   }, 800);
-  //   return () => {
-  //     clearInterval(timer);
-  //   };
-  // }, []);
-
   return (
     <div className={styles.report_container}>
       <div className={styles.heading}>
@@ -27,6 +19,9 @@ const AuditReport = () => {
       <AuditScores />
       <OnpageResults />
       <PageFunctions />
+      <HeaderTag />
+      <OnpageContent />
+      <SpeedInsights />
     </div>
   );
 };

@@ -1,24 +1,24 @@
 import React, { useContext } from "react";
-import { Typography } from "@mui/material";
+import styles from "./SpeedInsights.module.css";
 import ResultCard from "../utils/ResultCard";
-import styles from "./OnpageResults.module.css";
+import { Typography } from "@mui/material";
 import { AppContext } from "../../context/application-context";
 
-const OnpageResults = () => {
+const SpeedInsights = () => {
   const appCtx = useContext(AppContext);
   const insightPageData = appCtx.insightPageData;
-  const lighthouseData = appCtx.lighthouseData;
 
-  // onpage results data tranformation
-  const insightPageRef = insightPageData?.tasks[0]?.result[0]?.items[0]?.meta;
-  const onpageResultsData = [];
+  // speed insights data tranformation
+  const insightPageRef =
+    insightPageData?.tasks[0]?.result[0]?.items[0]?.page_timing;
+  const speedInsightsData = [];
 
   for (const key in insightPageRef) {
     const obj = {
       quantity: "",
       title: "",
     };
-    obj.quantity = insightPageRef[key];
+    obj.quantity = Number(insightPageRef[key]).toFixed(2) + " " + "ms";
     obj.title = key.replace(/\_/g, " ");
 
     const words = obj.title.split(" ");
@@ -28,21 +28,20 @@ const OnpageResults = () => {
     }
 
     words.join(" ");
-
     obj.title = words.join(" ");
 
-    onpageResultsData.push(obj);
+    speedInsightsData.push(obj);
   }
 
-  console.log(onpageResultsData.slice(9, 22));
+  console.log(speedInsightsData);
 
   return (
     <div className={styles.page_results_container}>
       <Typography variant="h4" gutterBottom>
-        OnPage Results
+        Speed Insights
       </Typography>
       <div className={styles.cards_container}>
-        {onpageResultsData.slice(9, 22).map((data) => {
+        {speedInsightsData.map((data) => {
           return <ResultCard data={data} />;
         })}
       </div>
@@ -50,4 +49,4 @@ const OnpageResults = () => {
   );
 };
 
-export default OnpageResults;
+export default SpeedInsights;

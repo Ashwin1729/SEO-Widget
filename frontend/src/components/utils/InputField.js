@@ -44,13 +44,13 @@ const InputField = () => {
       },
     ];
 
-    // // screenshot API
-    // const screenshot = await screenshotAPI(screenshot_data);
-    // setScreenshotUrl(screenshot);
+    // screenshot API
+    const screenshot = await screenshotAPI(screenshot_data);
+    setScreenshotUrl(screenshot);
 
     // // instantPagesAPI
-    // const insightPageData = await insightPageAPI(page_data);
-    // setInsightPageData(insightPageData);
+    const insightPageData = await insightPageAPI(page_data);
+    setInsightPageData(insightPageData);
 
     // lighthousePostAPI
     const postId = await lighthousePostAPI(lighthouse_data);

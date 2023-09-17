@@ -26,12 +26,12 @@ const AuditScores = () => {
   return (
     <div className={styles.score_container}>
       <div className={styles.screenshot}>
-        <img src={screenshot} alt="website_screenshot" />
+        <img src={screenshotUrl} alt="website_screenshot" />
       </div>
       <div className={styles.page_score}>
         <div className={styles.progress}>
           <CircularProgress
-            value={80}
+            value={onpageScore}
             style={{ width: "150px", height: "150px" }}
           />
           <Typography variant="h6" gutterBottom>
@@ -41,7 +41,7 @@ const AuditScores = () => {
         <div className={styles.page_score_section}>
           <div className={styles.progress}>
             <CircularProgress
-              value={90}
+              value={performanceScore}
               style={{ width: "80px", height: "80px" }}
             />
             <Typography variant="h6" gutterBottom>
@@ -50,7 +50,7 @@ const AuditScores = () => {
           </div>
           <div className={styles.progress}>
             <CircularProgress
-              value={90}
+              value={seoScore}
               style={{ width: "80px", height: "80px" }}
             />
             <Typography variant="h6" gutterBottom>
@@ -59,7 +59,7 @@ const AuditScores = () => {
           </div>
           <div className={styles.progress}>
             <CircularProgress
-              value={90}
+              value={bestPracticesScore}
               style={{ width: "80px", height: "80px" }}
             />
             <Typography variant="h6" gutterBottom>

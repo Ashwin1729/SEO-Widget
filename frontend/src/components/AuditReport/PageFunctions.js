@@ -1,63 +1,52 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Typography } from "@mui/material";
 import styles from "./PageFunctions.module.css";
 import FunctionsCard from "../utils/FunctionsCard";
+import { AppContext } from "../../context/application-context";
+import { check_description } from "../../data/checks_data_description";
 
 const PageFunctions = () => {
+  const appCtx = useContext(AppContext);
+  const insightPageData = appCtx.insightPageData;
+  const lighthouseData = appCtx.lighthouseData;
+
+  const insightPageRef = insightPageData?.tasks[0]?.result[0]?.items[0]?.checks;
+  const checksData = [];
+
+  for (const key in insightPageRef) {
+    const obj = {
+      status: "",
+      title: "",
+      description: "",
+    };
+
+    obj.title = key.replace(/\_/g, " ");
+    obj.description = check_description[key];
+    obj.status = insightPageRef[key] ? "ok" : "not_ok";
+
+    const words = obj.title.split(" ");
+
+    for (let i = 0; i < words.length; i++) {
+      words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+    }
+
+    words.join(" ");
+    obj.title = words.join(" ");
+
+    checksData.push(obj);
+  }
+
+  console.log(checksData);
+
   return (
     <div className={styles.page_results_container}>
       <Typography variant="h4" gutterBottom>
         Functional Analysis
       </Typography>
       <div className={styles.cards_container}>
-        <FunctionsCard
-          data={{
-            status: "ok",
-            title: "Duplicate Title",
-            description:
-              "Duplicate title tags are bad for SEO. They confuse search engines and make it harder to rank for specific keywords.",
-          }}
-        />
-        <FunctionsCard
-          data={{
-            status: "not_ok",
-            title: "Duplicate Title",
-            description:
-              "Duplicate title tags are bad for SEO. They confuse search engines and make it harder to rank for specific keywords.",
-          }}
-        />
-        <FunctionsCard
-          data={{
-            status: "ok",
-            title: "Duplicate Title",
-            description:
-              "Duplicate title tags are bad for SEO. They confuse search engines and make it harder to rank for specific keywords.",
-          }}
-        />
-        <FunctionsCard
-          data={{
-            status: "not_ok",
-            title: "Duplicate Title",
-            description:
-              "Duplicate title tags are bad for SEO. They confuse search engines and make it harder to rank for specific keywords.",
-          }}
-        />
-        <FunctionsCard
-          data={{
-            status: "ok",
-            title: "Duplicate Title",
-            description:
-              "Duplicate title tags are bad for SEO. They confuse search engines and make it harder to rank for specific keywords.",
-          }}
-        />
-        <FunctionsCard
-          data={{
-            status: "ok",
-            title: "Duplicate Title",
-            description:
-              "Duplicate title tags are bad for SEO. They confuse search engines and make it harder to rank for specific keywords.",
-          }}
-        />
+        {checksData.map((data) => {
+          return <FunctionsCard data={data} />;
+        })}
       </div>
     </div>
   );

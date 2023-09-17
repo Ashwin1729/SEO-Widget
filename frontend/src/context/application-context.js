@@ -7,6 +7,8 @@ export const AppContext = createContext({
   setScreenshotUrl: () => {},
   insightPageData: null,
   setInsightPageData: () => {},
+  lighthouseData: null,
+  setLighthouseData: () => {},
   loading: null,
   setLoading: () => {},
 });
@@ -16,6 +18,7 @@ const AppContextProvider = (props) => {
   const [loading, setLoading] = useState(false);
   const [screenshotUrl, setScreenshotUrl] = useState("");
   const [insightPageData, setInsightPageData] = useState(null);
+  const [lighthouseData, setLighthouseData] = useState(null);
 
   const store = {
     url,
@@ -24,6 +27,8 @@ const AppContextProvider = (props) => {
     setScreenshotUrl,
     insightPageData,
     setInsightPageData,
+    lighthouseData,
+    setLighthouseData,
     loading,
     setLoading,
   };

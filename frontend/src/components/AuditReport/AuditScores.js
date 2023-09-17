@@ -9,11 +9,19 @@ const AuditScores = () => {
   const appCtx = useContext(AppContext);
   const screenshotUrl = appCtx.screenshotUrl;
   const insightPageData = appCtx.insightPageData;
+  const lighthouseData = appCtx.lighthouseData;
 
   const onpageScore =
     insightPageData?.tasks[0]?.result[0]?.items[0]?.onpage_score;
+  const performanceScore =
+    lighthouseData?.tasks[0]?.result[0]?.categories?.performance?.score * 100;
+  const seoScore =
+    lighthouseData?.tasks[0]?.result[0]?.categories?.seo?.score * 100;
+  const bestPracticesScore =
+    lighthouseData?.tasks[0]?.result[0]?.categories["best-practices"]?.score *
+    100;
 
-  console.log(onpageScore);
+  console.log(performanceScore, seoScore, bestPracticesScore);
 
   return (
     <div className={styles.score_container}>

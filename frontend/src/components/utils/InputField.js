@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 import { AppContext } from "../../context/application-context";
 import screenshotAPI from "../../api/screenshotAPI";
 import insightPageAPI from "../../api/insightPagesAPI";
+import { lighthousePostAPI, lighthouseGetAPI } from "../../api/lighthouseAPI";
 import { useNavigate } from "react-router-dom";
 
 const InputField = () => {
@@ -15,6 +16,7 @@ const InputField = () => {
   const setLoading = appCtx.setLoading;
   const setScreenshotUrl = appCtx.setScreenshotUrl;
   const setInsightPageData = appCtx.setInsightPageData;
+  const setLighthouseData = appCtx.setLighthouseData;
 
   const submitHandler = async () => {
     setLoading(true);
@@ -35,18 +37,40 @@ const InputField = () => {
       },
     ];
 
-    // screenshot API
-    const screenshot = await screenshotAPI(screenshot_data);
-    setScreenshotUrl(screenshot);
+    const lighthouse_data = [
+      {
+        url: websiteUrl,
+        for_mobile: true,
+      },
+    ];
 
-    // instantPagesAPI
-    const insightPageData = await insightPageAPI(page_data);
-    setInsightPageData(insightPageData);
+    // // screenshot API
+    // const screenshot = await screenshotAPI(screenshot_data);
+    // setScreenshotUrl(screenshot);
+
+    // // instantPagesAPI
+    // const insightPageData = await insightPageAPI(page_data);
+    // setInsightPageData(insightPageData);
+
+    // lighthousePostAPI
+    const postId = await lighthousePostAPI(lighthouse_data);
+    console.log(postId);
 
     // lighthouseGetAPI
+    const interval = setInterval(async () => {
+      const lighthouseData = await lighthouseGetAPI(postId);
+      if (
+        lighthouseData &&
+        lighthouseData?.tasks[0]?.status_message === "Ok." &&
+        lighthouseData?.tasks[0]?.result[0]
+      ) {
+        setLighthouseData(lighthouseData);
+        clearInterval(interval);
+        setLoading(false);
+      }
+    }, 5000);
 
     navigate("/audit_report");
-    setLoading(false);
   };
 
   return (

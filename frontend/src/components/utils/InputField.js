@@ -4,6 +4,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { AppContext } from "../../context/application-context";
 import screenshotAPI from "../../api/screenshotAPI";
+import insightPageAPI from "../../api/insightPagesAPI";
 import { useNavigate } from "react-router-dom";
 
 const InputField = () => {
@@ -13,6 +14,7 @@ const InputField = () => {
   const appCtx = useContext(AppContext);
   const setLoading = appCtx.setLoading;
   const setScreenshotUrl = appCtx.setScreenshotUrl;
+  const setInsightPageData = appCtx.setInsightPageData;
 
   const submitHandler = async () => {
     setLoading(true);
@@ -24,8 +26,25 @@ const InputField = () => {
       },
     ];
 
+    const page_data = [
+      {
+        url: websiteUrl,
+        enable_javascript: "true",
+        enable_browser_rendering: "true",
+        check_spell: "true",
+      },
+    ];
+
+    // screenshot API
     const screenshot = await screenshotAPI(screenshot_data);
     setScreenshotUrl(screenshot);
+
+    // instantPagesAPI
+    const insightPageData = await insightPageAPI(page_data);
+    setInsightPageData(insightPageData);
+
+    // lighthouseGetAPI
+
     navigate("/audit_report");
     setLoading(false);
   };

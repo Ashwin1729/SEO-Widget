@@ -21,10 +21,17 @@
 
 .page_score {
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex: 40%;
+  margin: 20px;
+}
+
+.page_score_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 20px;
 }
 

@@ -34,8 +34,6 @@ const OnpageResults = () => {
     onpageResultsData.push(obj);
   }
 
-  console.log(onpageResultsData.slice(9, 22));
-
   return (
     <div className={styles.page_results_container}>
       <Typography variant="h4" gutterBottom className={styles.heading}>

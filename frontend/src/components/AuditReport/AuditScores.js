@@ -29,8 +29,6 @@ const AuditScores = () => {
     lighthouseData?.tasks[0]?.result[0]?.categories["best-practices"]?.score *
     100;
 
-  console.log(performanceScore, seoScore, bestPracticesScore);
-
   const { value: onPageValue } = useCountUp({
     isCounting: true,
     end: onpageScore,

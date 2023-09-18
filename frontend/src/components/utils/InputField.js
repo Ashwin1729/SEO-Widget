@@ -54,7 +54,6 @@ const InputField = () => {
 
     // lighthousePostAPI
     const postId = await lighthousePostAPI(lighthouse_data);
-    console.log(postId);
 
     // lighthouseGetAPI
     const interval = setInterval(async () => {

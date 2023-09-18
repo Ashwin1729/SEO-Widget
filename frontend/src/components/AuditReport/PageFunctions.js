@@ -36,8 +36,6 @@ const PageFunctions = () => {
     checksData.push(obj);
   }
 
-  console.log(checksData);
-
   return (
     <div className={styles.page_results_container}>
       <Typography variant="h4" gutterBottom className={styles.heading}>

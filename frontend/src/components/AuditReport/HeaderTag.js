@@ -26,8 +26,6 @@ const HeaderTag = () => {
     htagsData.push(obj);
   }
 
-  console.log(htagsData);
-
   return (
     <div className={styles.tag_container}>
       <Typography variant="h4" gutterBottom className={styles.heading}>

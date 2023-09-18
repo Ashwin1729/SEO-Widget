@@ -34,8 +34,6 @@ const OnpageContent = () => {
     onpageContentData.push(obj);
   }
 
-  console.log(onpageContentData);
-
   return (
     <div className={styles.page_results_container}>
       <Typography variant="h4" gutterBottom className={styles.heading}>

@@ -19,7 +19,7 @@
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
   font-weight: 700;
-  font-size: 0.75rem;
+  font-size: 0.75vw;
   line-height: 1rem;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
@@ -27,6 +27,44 @@
 
 .url {
   font-weight: 700;
-  font-size: 2.25rem;
+  font-size: 2.25vw;
   line-height: 2.5rem;
+}
+
+@media (max-width: 900px) {
+  .title {
+    font-size: 0.5rem;
+    margin-bottom: 10px;
+  }
+  .url {
+    line-height: 1.5rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .url {
+    line-height: 1rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .url {
+    font-size: 3vw;
+    line-height: 0.5rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .title {
+    font-size: 0.4rem;
+    margin-bottom: 5px;
+  }
+  .url {
+    font-size: 2.5vw;
+    line-height: 0.3rem;
+  }
+  .report_container {
+    margin: 10px;
+    padding: 10px;
+  }
 }

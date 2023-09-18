@@ -87,7 +87,7 @@ const AuditScores = () => {
               value={performance}
               style={{ width: "80px", height: "80px" }}
             />
-            <Typography variant="h6" gutterBottom>
+            <Typography variant="h6" gutterBottom className={styles.score_name}>
               Performance
             </Typography>
           </div>
@@ -96,7 +96,7 @@ const AuditScores = () => {
               value={seo}
               style={{ width: "80px", height: "80px" }}
             />
-            <Typography variant="h6" gutterBottom>
+            <Typography variant="h6" gutterBottom className={styles.score_name}>
               SEO
             </Typography>
           </div>
@@ -105,7 +105,7 @@ const AuditScores = () => {
               value={bestPractices}
               style={{ width: "80px", height: "80px" }}
             />
-            <Typography variant="h6" gutterBottom>
+            <Typography variant="h6" gutterBottom className={styles.score_name}>
               Best Practices
             </Typography>
           </div>

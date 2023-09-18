@@ -38,21 +38,13 @@ const OnpageContent = () => {
 
   return (
     <div className={styles.page_results_container}>
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h4" gutterBottom className={styles.heading}>
         OnPage Contents
       </Typography>
       <div className={styles.cards_container}>
         {onpageContentData.map((data) => {
           return <ResultCard data={data} />;
         })}
-        {/* <ResultCard data={{ quantity: 50, title: "Internal Links" }} />
-        <ResultCard data={{ quantity: 50, title: "Internal Links" }} />
-        <ResultCard data={{ quantity: 50, title: "Internal Links" }} />
-        <ResultCard data={{ quantity: 50, title: "Internal Links" }} />
-        <ResultCard data={{ quantity: 50, title: "Internal Links" }} />
-        <ResultCard data={{ quantity: 50, title: "Internal Links" }} />
-        <ResultCard data={{ quantity: 50, title: "Internal Links" }} />
-        <ResultCard data={{ quantity: 50, title: "Internal Links" }} /> */}
       </div>
     </div>
   );

@@ -30,7 +30,7 @@ const HeaderTag = () => {
 
   return (
     <div className={styles.tag_container}>
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h4" gutterBottom className={styles.heading}>
         H Tags
       </Typography>
       <div className={styles.cards_container}>

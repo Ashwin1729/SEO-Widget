@@ -38,7 +38,7 @@ const OnpageResults = () => {
 
   return (
     <div className={styles.page_results_container}>
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h4" gutterBottom className={styles.heading}>
         OnPage Results
       </Typography>
       <div className={styles.cards_container}>

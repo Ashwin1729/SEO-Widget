@@ -16,5 +16,8 @@
   line-height: 2rem;
 }
 
-.title {
+@media (max-width: 720px) {
+  .card_container {
+    flex: 40%;
+  }
 }

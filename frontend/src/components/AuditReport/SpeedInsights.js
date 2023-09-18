@@ -37,7 +37,7 @@ const SpeedInsights = () => {
 
   return (
     <div className={styles.page_results_container}>
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h4" gutterBottom className={styles.heading}>
         Speed Insights
       </Typography>
       <div className={styles.cards_container}>

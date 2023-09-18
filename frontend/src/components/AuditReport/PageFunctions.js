@@ -40,7 +40,7 @@ const PageFunctions = () => {
 
   return (
     <div className={styles.page_results_container}>
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h4" gutterBottom className={styles.heading}>
         Functional Analysis
       </Typography>
       <div className={styles.cards_container}>

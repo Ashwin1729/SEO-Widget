@@ -42,3 +42,33 @@
   align-items: center;
   margin: 20px;
 }
+
+@media (max-width: 1200px) {
+  .score_container {
+    flex-direction: column;
+  }
+
+  .screenshot {
+    flex: 90%;
+  }
+
+  .page_score {
+    flex: 90%;
+  }
+}
+
+@media (max-width: 625px) {
+  .page_score_section {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 400px) {
+  .screenshot {
+    flex: 100%;
+  }
+
+  .score_name {
+    font-size: 5vw;
+  }
+}

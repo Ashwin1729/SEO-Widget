@@ -13,3 +13,9 @@
   width: 100%;
   flex-wrap: wrap;
 }
+
+@media (max-width: 720px) {
+  .heading {
+    font-size: 5vw;
+  }
+}

@@ -7,6 +7,7 @@ import screenshotAPI from "../../api/screenshotAPI";
 import insightPageAPI from "../../api/insightPagesAPI";
 import { lighthousePostAPI, lighthouseGetAPI } from "../../api/lighthouseAPI";
 import { useNavigate } from "react-router-dom";
+import { notifyNoUrl, notifyInvalidUrl } from "../../data/toastify-objects";
 
 const InputField = () => {
   const [websiteUrl, setWebsiteUrl] = useState("");
@@ -21,6 +22,12 @@ const InputField = () => {
 
   const submitHandler = async () => {
     setLoading(true);
+
+    if (websiteUrl === "") {
+      notifyNoUrl();
+      setLoading(false);
+      return;
+    }
 
     // data for screenshot API
     const screenshot_data = [
@@ -55,6 +62,18 @@ const InputField = () => {
     // instantPagesAPI
     const insightPageData = await insightPageAPI(page_data);
     setInsightPageData(insightPageData);
+
+    // checking validity of entered URL
+    if (
+      insightPageData?.tasks[0]?.status_message ===
+        "Invalid Field: 'url - Domain Not Found'." ||
+      "Invalid Field: 'url'."
+    ) {
+      notifyInvalidUrl();
+      navigate("/");
+      setLoading(false);
+      return;
+    }
 
     // lighthouse Post API
     const postId = await lighthousePostAPI(lighthouse_data);

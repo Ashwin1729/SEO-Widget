@@ -3,6 +3,7 @@ import LandingPage from "./components/LandingPage";
 import AuditReport from "./components/AuditReport/AuditReport";
 import { Routes, Route } from "react-router-dom";
 import Loader from "./components/utils/Loader";
+import { ToastContainer } from "react-toastify";
 import { AppContext } from "./context/application-context";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/audit_report" element={<AuditReport />} />
         </Routes>
       )}
+      <ToastContainer />
     </div>
   );
 }

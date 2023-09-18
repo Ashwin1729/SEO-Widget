@@ -12,6 +12,7 @@ const InputField = () => {
   const [websiteUrl, setWebsiteUrl] = useState("");
   const navigate = useNavigate();
 
+  // accessing data from context API
   const appCtx = useContext(AppContext);
   const setLoading = appCtx.setLoading;
   const setScreenshotUrl = appCtx.setScreenshotUrl;
@@ -21,6 +22,7 @@ const InputField = () => {
   const submitHandler = async () => {
     setLoading(true);
 
+    // data for screenshot API
     const screenshot_data = [
       {
         url: websiteUrl,
@@ -28,6 +30,7 @@ const InputField = () => {
       },
     ];
 
+    // data for instant pages API
     const page_data = [
       {
         url: websiteUrl,
@@ -37,6 +40,7 @@ const InputField = () => {
       },
     ];
 
+    // data for lighthouse Post API
     const lighthouse_data = [
       {
         url: websiteUrl,
@@ -48,14 +52,14 @@ const InputField = () => {
     const screenshot = await screenshotAPI(screenshot_data);
     setScreenshotUrl(screenshot);
 
-    // // instantPagesAPI
+    // instantPagesAPI
     const insightPageData = await insightPageAPI(page_data);
     setInsightPageData(insightPageData);
 
-    // lighthousePostAPI
+    // lighthouse Post API
     const postId = await lighthousePostAPI(lighthouse_data);
 
-    // lighthouseGetAPI
+    // lighthouse Get API
     const interval = setInterval(async () => {
       const lighthouseData = await lighthouseGetAPI(postId);
       if (

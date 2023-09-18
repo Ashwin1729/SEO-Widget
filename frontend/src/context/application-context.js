@@ -1,5 +1,6 @@
 import React, { useState, createContext } from "react";
 
+// Initializing context or application wide state management store
 export const AppContext = createContext({
   url: "",
   setUrl: () => {},
@@ -13,6 +14,7 @@ export const AppContext = createContext({
   setLoading: () => {},
 });
 
+// defining context provider
 const AppContextProvider = (props) => {
   const [url, setUrl] = useState("");
   const [loading, setLoading] = useState(false);

@@ -6,6 +6,7 @@ import styles from "./FunctionsCard.module.css";
 const FunctionsCard = ({ data }) => {
   let icon;
 
+  // defining the status of each SEO check functionality
   if (data.status === "ok") {
     icon = <TaskAltOutlinedIcon color="success" fontSize="large" />;
   } else if (data.status === "not_ok") {

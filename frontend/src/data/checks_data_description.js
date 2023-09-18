@@ -1,3 +1,4 @@
+// description data for each SEO check functionality
 export const check_description = {
   no_content_encoding:
     "Content encoding is mainly used to compress the message data without losing information about the origin media type",

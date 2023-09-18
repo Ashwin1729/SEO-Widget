@@ -1,5 +1,6 @@
 import axios from "axios";
 
+// lighthouse page API function
 export const lighthousePostAPI = async (lighthouse_data) => {
   let postId;
 

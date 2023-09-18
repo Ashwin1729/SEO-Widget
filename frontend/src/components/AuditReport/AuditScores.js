@@ -19,6 +19,7 @@ const AuditScores = () => {
   const [seo, setSeo] = useState(0);
   const [bestPractices, setBestPractices] = useState(0);
 
+  // defining scores for each SEO functionality ones they are fetched from API
   const onpageScore =
     insightPageData?.tasks[0]?.result[0]?.items[0]?.onpage_score;
   const performanceScore =
@@ -29,6 +30,7 @@ const AuditScores = () => {
     lighthouseData?.tasks[0]?.result[0]?.categories["best-practices"]?.score *
     100;
 
+  // count up hook for on page score
   const { value: onPageValue } = useCountUp({
     isCounting: true,
     end: onpageScore,
@@ -36,6 +38,7 @@ const AuditScores = () => {
     easing: "easeOutCubic",
   });
 
+  // count up hook for performance score
   const { value: performancevalue } = useCountUp({
     isCounting: true,
     end: performanceScore,
@@ -43,6 +46,7 @@ const AuditScores = () => {
     easing: "easeOutCubic",
   });
 
+  // count up hook for seo score
   const { value: seovalue } = useCountUp({
     isCounting: true,
     end: seoScore,
@@ -50,6 +54,7 @@ const AuditScores = () => {
     easing: "easeOutCubic",
   });
 
+  // count up hook for best practices score
   const { value: bestPracticesvalue } = useCountUp({
     isCounting: true,
     end: bestPracticesScore,

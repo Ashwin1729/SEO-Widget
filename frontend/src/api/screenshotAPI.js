@@ -1,5 +1,6 @@
 import axios from "axios";
 
+// screenshot fetching API function
 const screenshotAPI = async (screenshot_data) => {
   let screenshotUrl;
 

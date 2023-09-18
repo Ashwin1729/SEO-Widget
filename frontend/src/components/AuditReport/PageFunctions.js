@@ -6,10 +6,11 @@ import { AppContext } from "../../context/application-context";
 import { check_description } from "../../data/checks_data_description";
 
 const PageFunctions = () => {
+  // accessing data from context api
   const appCtx = useContext(AppContext);
   const insightPageData = appCtx.insightPageData;
-  const lighthouseData = appCtx.lighthouseData;
 
+  // page functions data tranformation
   const insightPageRef = insightPageData?.tasks[0]?.result[0]?.items[0]?.checks;
   const checksData = [];
 

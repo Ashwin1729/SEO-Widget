@@ -5,9 +5,9 @@ import styles from "./OnpageContent.module.css";
 import { AppContext } from "../../context/application-context";
 
 const OnpageContent = () => {
+  // accessing data from context api
   const appCtx = useContext(AppContext);
   const insightPageData = appCtx.insightPageData;
-  const lighthouseData = appCtx.lighthouseData;
 
   // onpage content data tranformation
   const insightPageRef =

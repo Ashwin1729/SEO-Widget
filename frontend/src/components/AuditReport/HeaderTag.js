@@ -5,6 +5,7 @@ import { Typography } from "@mui/material";
 import { AppContext } from "../../context/application-context";
 
 const HeaderTag = () => {
+  // accessing data from context api
   const appCtx = useContext(AppContext);
   const insightPageData = appCtx.insightPageData;
 

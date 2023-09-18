@@ -1,5 +1,6 @@
 import axios from "axios";
 
+// insight page API function
 const insightPageAPI = async (page_data) => {
   let insightPageData;
 

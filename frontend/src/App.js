@@ -6,6 +6,7 @@ import Loader from "./components/utils/Loader";
 import { AppContext } from "./context/application-context";
 
 function App() {
+  // accessing data from context API
   const appCtx = useContext(AppContext);
   const loading = appCtx.loading;
 

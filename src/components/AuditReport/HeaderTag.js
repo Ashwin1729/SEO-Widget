@@ -22,7 +22,7 @@ const HeaderTag = () => {
     };
     obj.tag_data = insightPageRef[key];
     obj.tag = key;
-    obj.number = insightPageRef[key].length;
+    obj.number = insightPageRef[key]?.length;
 
     htagsData.push(obj);
   }

@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0edff03c.css",
+    "main.js": "/static/js/main.b95d3488.js",
+    "static/media/screenshot.png": "/static/media/screenshot.f047cf0cf43a0a9bd168.png",
+    "static/media/growthfyi_logo.svg": "/static/media/growthfyi_logo.ebe0ad465f4c07683345f2cf89cb3cf0.svg",
+    "index.html": "/index.html",
+    "main.0edff03c.css.map": "/static/css/main.0edff03c.css.map",
+    "main.b95d3488.js.map": "/static/js/main.b95d3488.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0edff03c.css",
+    "static/js/main.b95d3488.js"
+  ]
+}

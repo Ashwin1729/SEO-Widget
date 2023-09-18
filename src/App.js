@@ -11,6 +11,11 @@ function App() {
   const appCtx = useContext(AppContext);
   const loading = appCtx.loading;
 
+  console.log(
+    process.env.REACT_APP_API_USERNAME,
+    process.env.REACT_APP_API_PASSWORD
+  );
+
   return (
     <div>
       {loading && <Loader />}

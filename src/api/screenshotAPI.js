@@ -10,8 +10,8 @@ const screenshotAPI = async (screenshot_data) => {
       screenshot_data,
       {
         auth: {
-          username: "mathematicswroteus@gmail.com",
-          password: "dffdab66d00d01a0",
+          username: process.env.REACT_APP_API_USERNAME,
+          password: process.env.REACT_APP_API_PASSWORD,
         },
         headers: {
           "content-type": "application/json",

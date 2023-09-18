@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./InputField.module.css";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -7,7 +7,7 @@ import screenshotAPI from "../../api/screenshotAPI";
 import insightPageAPI from "../../api/insightPagesAPI";
 import { lighthousePostAPI, lighthouseGetAPI } from "../../api/lighthouseAPI";
 import { useNavigate } from "react-router-dom";
-import { notifyNoUrl, notifyInvalidUrl } from "../../data/toastify-objects";
+import { notifyNoUrl } from "../../data/toastify-objects";
 
 const InputField = () => {
   const [websiteUrl, setWebsiteUrl] = useState("");
@@ -61,19 +61,14 @@ const InputField = () => {
 
     // instantPagesAPI
     const insightPageData = await insightPageAPI(page_data);
-    setInsightPageData(insightPageData);
 
-    // checking validity of entered URL
-    if (
-      insightPageData?.tasks[0]?.status_message ===
-        "Invalid Field: 'url - Domain Not Found'." ||
-      "Invalid Field: 'url'."
-    ) {
-      notifyInvalidUrl();
+    if (!insightPageData) {
       navigate("/");
       setLoading(false);
       return;
     }
+
+    setInsightPageData(insightPageData, setLoading, navigate);
 
     // lighthouse Post API
     const postId = await lighthousePostAPI(lighthouse_data);

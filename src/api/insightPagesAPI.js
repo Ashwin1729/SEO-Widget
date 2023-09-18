@@ -1,8 +1,9 @@
 import axios from "axios";
+import { notifyInvalidUrl } from "../data/toastify-objects";
 
 // insight page API function
-const insightPageAPI = async (page_data) => {
-  let insightPageData;
+const insightPageAPI = async (page_data, setLoading, navigate) => {
+  let insightPageData = null;
 
   try {
     const { data } = await axios.post(
@@ -10,8 +11,8 @@ const insightPageAPI = async (page_data) => {
       page_data,
       {
         auth: {
-          username: "mathematicswroteus@gmail.com",
-          password: "dffdab66d00d01a0",
+          username: process.env.REACT_APP_API_USERNAME,
+          password: process.env.REACT_APP_API_PASSWORD,
         },
         headers: {
           "content-type": "application/json",
@@ -19,10 +20,18 @@ const insightPageAPI = async (page_data) => {
       }
     );
 
+    if (
+      data?.tasks[0]?.status_message ===
+        "Invalid Field: 'url - Domain Not Found'." ||
+      data?.tasks[0]?.status_message === "Invalid Field: 'url'."
+    ) {
+      notifyInvalidUrl();
+      return insightPageData;
+    }
+
     insightPageData = data;
   } catch (error) {
     console.log(error);
-    insightPageData = {};
   }
 
   return insightPageData;

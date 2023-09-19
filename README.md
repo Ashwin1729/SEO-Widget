@@ -2,7 +2,7 @@
 
 Its a simple widget for SEO Audit.
 
-Deployment link -
+Deployment link - https://seo-widget-peq0a2gip-ashwin1729.vercel.app/
 
 Test data for login -
 
@@ -15,6 +15,12 @@ Test data for login -
   features which will affect the SEO of the website.
 - User can explore audit report for SEO of the website where they can observe On Page score, performance, seo, best practices
   onpage results, functional analysis, htags, speed analysis and much more...
+
+```
+<iframe src="https://seo-widget-peq0a2gip-ashwin1729.vercel.app/" width="300" height="400"></iframe>
+```
+
+( Add this code to integrate this SEO Widget as an iframe. )
 
 ## Techologies Used
 
@@ -30,4 +36,4 @@ Test data for login -
 
 ### Deployment
 
-- Render
+- Vercel
